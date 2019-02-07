@@ -19,7 +19,13 @@ Problem statement:
 
 
 
- Hive Commands         |  Functions 
- ------------          |  -------------
- CREATE EXTERNAL TABLE |  It creates a table in HDFS directory
+ Hive Commands          |  Functions 
+ ------------           |  -------------
+ SHOW DATABASES         |  It will show all the databases in Hive
+ CREATE EXTERNAL TABLE  |  It creates a table in HDFS directory
+ CREATE INTERNAL TABLE  |  It will store the table in warehouse directory i.e /user/hive/warehouse/{db name}/tablename
+ LOAD DATA LOCAL INPATH |  Loading a file from the local directory into Hive table
+ LOAD DATA INPATH       |  Loading a file from HDFS directory into Hive table
+ 
+ 
  
