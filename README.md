@@ -4,12 +4,12 @@ IBM Hadoop Project
 The project aims to display show-to-channel relationship is Many-to-Many. In other words, each show might appear on many channels, and each channel might broadcast many shows.
 
 The description of the data is as below
- TV show titles do not have spaces
- Channels have 3 letters
- TV show titles can appear multiple times, with different counts
- A TV show and channel combination might appear multiple times
- TV shows could appear on multiple channels
- The output should have no commas or punctuation, only 1 space between the TV show title and number.
+1. TV show titles do not have spaces
+2. Channels have 3 letters
+3. TV show titles can appear multiple times, with different counts
+4. A TV show and channel combination might appear multiple times
+5. TV shows could appear on multiple channels
+6. The output should have no commas or punctuation, only 1 space between the TV show title and number.
 
 Problem statement:
 1. What is the total number of viewers for shows on ABC?
