@@ -19,5 +19,7 @@ Problem statement:
 
 
 
- Hive Commands |  Functions 
+ Hive Commands         |  Functions 
+ ------------          |  -------------
+ CREATE EXTERNAL TABLE |  It creates a table in HDFS directory
  
