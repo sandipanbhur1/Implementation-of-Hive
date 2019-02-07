@@ -1,0 +1,743 @@
+hive> show databases;
+OK
+default
+project
+sept01batch
+Time taken: 6.009 seconds
+hive> use project;
+OK
+Time taken: 0.069 seconds
+hive> create table gennum(showtitle string,viewer int) row format delimited fields terminated by ',';
+OK
+Time taken: 0.415 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumA.txt into table gennum;
+FAILED: ParseException line 1:24 mismatched input '/' expecting StringLiteral near 'inpath' in load statement
+
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumA.txt' into table gennum;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumA.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumA.txt
+Loading data to table project.gennum
+Table project.gennum stats: [num_partitions: 0, num_files: 1, num_rows: 0, total_size: 17114, raw_data_size: 0]
+OK
+Time taken: 0.645 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumB.txt' into table gennum;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumB.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumB.txt
+Loading data to table project.gennum
+Table project.gennum stats: [num_partitions: 0, num_files: 2, num_rows: 0, total_size: 51359, raw_data_size: 0]
+OK
+Time taken: 0.317 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumC.txt' into table gennum;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumC.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_gennumC.txt
+Loading data to table project.gennum
+Table project.gennum stats: [num_partitions: 0, num_files: 3, num_rows: 0, total_size: 102759, raw_data_size: 0]
+OK
+Time taken: 0.323 seconds
+hive> select * from gennum;
+
+Loud_Talking    555
+Cold_News       18
+Surreal_Games   1017
+Hourly_Games    944
+Hot_Talking     799
+Almost_Sports   510
+Dumb_Cooking    969
+PostModern_Games        852
+Baked_Show      619
+Loud_News       154
+Cold_Cooking    261
+Surreal_Talking 476
+Hourly_Talking  907
+Hot_Show        734
+Almost_Talking  389
+Dumb_Games      736
+PostModern_Talking      395
+Baked_Sports    750
+Loud_Cooking    425
+Cold_Games      812
+Surreal_Show    551
+Hourly_Show     30
+Hot_Sports      25
+Almost_News     1052
+Dumb_Talking    1035
+PostModern_Show 1002
+Baked_Talking   937
+Loud_Games      808
+Cold_Talking    551
+Surreal_Sports  38
+Hourly_Sports   49
+Hot_Talking     72
+Almost_Cooking  119
+Dumb_Show       214
+PostModern_Sports       405
+Baked_News      788
+Loud_Talking    519
+Cold_Show       1018
+Surreal_Talking 981
+Hourly_Talking  908
+Hot_News        763
+Almost_Games    474
+Dumb_Sports     933
+PostModern_Talking      816
+Baked_Cooking   583
+Loud_Show       118
+Cold_Sports     225
+Surreal_News    440
+Hourly_News     871
+Hot_Cooking     698
+Almost_Talking  353
+Dumb_Talking    700
+PostModern_News 359
+Baked_Games     714
+Loud_Sports     389
+Cold_Talking    776
+Surreal_Cooking 515
+Hourly_Cooking  1030
+Hot_Games       1025
+Almost_Show     1016
+Dumb_News       999
+PostModern_Cooking      966
+Baked_Talking   901
+Loud_Talking    772
+Cold_News       515
+Surreal_Games   1038
+Hourly_Games    1049
+Hot_Talking     36
+Almost_Sports   83
+Dumb_Cooking    178
+PostModern_Games        369
+Baked_Show      752
+Loud_News       483
+Cold_Cooking    982
+Surreal_Talking 945
+Hourly_Talking  872
+Hot_Show        727
+Almost_Talking  438
+Dumb_Games      897
+PostModern_Talking      780
+Baked_Sports    547
+Loud_Cooking    82
+Cold_Games      189
+Surreal_Show    404
+Hourly_Show     835
+Hot_Sports      662
+Almost_News     317
+Dumb_Talking    664
+PostModern_Show 323
+Baked_Talking   678
+Loud_Games      353
+Cold_Talking    740
+Surreal_Sports  479
+Hourly_Sports   994
+Hot_Talking     989
+Almost_Cooking  980
+Dumb_Show       963
+PostModern_Sports       930
+Baked_News      865
+Loud_Talking    736
+Cold_Show       479
+Surreal_Talking 1002
+Hourly_Talking  1013
+Hot_News        1036
+Almost_Games    47
+Dumb_Sports     142
+PostModern_Talking      333
+Baked_Cooking   716
+Loud_Show       447
+Cold_Sports     946
+Surreal_News    909
+Hourly_News     836
+Hot_Cooking     691
+Almost_Talking  402
+Dumb_Talking    861
+PostModern_News 744
+Baked_Games     511
+Loud_Sports     46
+Cold_Talking    153
+Surreal_Cooking 368
+Hourly_Cooking  799
+Hot_Games       626
+Almost_Show     281
+Dumb_News       628
+PostModern_Cooking      287
+Baked_Talking   642
+Loud_Talking    317
+Cold_News       704
+Surreal_Games   443
+Hourly_Games    958
+Hot_Talking     953
+Almost_Sports   944
+Dumb_Cooking    927
+PostModern_Games        894
+Baked_Show      829
+Loud_News       700
+Cold_Cooking    443
+Surreal_Talking 966
+Hourly_Talking  977
+Hot_Show        1000
+Almost_Talking  1047
+Dumb_Games      106
+PostModern_Talking      297
+Baked_Sports    680
+Loud_Cooking    411
+Cold_Games      910
+Surreal_Show    873
+Hourly_Show     800
+Hot_Sports      655
+Almost_News     366
+Dumb_Talking    825
+PostModern_Show 708
+Baked_Talking   475
+Loud_Games      1046
+Cold_Talking    117
+Surreal_Sports  332
+Hourly_Sports   763
+Hot_Talking     590
+Almost_Cooking  245
+Dumb_Show       592
+PostModern_Sports       251
+Baked_News      606
+Loud_Talking    281
+Cold_Show       668
+Surreal_Talking 407
+Hourly_Talking  922
+Hot_News        917
+Almost_Games    908
+Dumb_Sports     891
+PostModern_Talking      858
+Baked_Cooking   793
+Loud_Show       664
+Cold_Sports     407
+Surreal_News    930
+Hourly_News     941
+Hot_Cooking     964
+Almost_Talking  1011
+Dumb_Talking    70
+PostModern_News 261
+Baked_Games     644
+Loud_Sports     375
+Cold_Talking    874
+Surreal_Cooking 837
+Hourly_Cooking  764
+Hot_Games       619
+Almost_Show     330
+Dumb_News       789
+PostModern_Cooking      672
+Baked_Talking   439
+Time taken: 0.47 seconds
+hive> create table gennchan(showtitle string,channel string) row format delimited fields terminated by ',';
+OK
+Time taken: 0.048 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanA.txt' into table gennchan;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanA.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanA.txt
+Loading data to table project.gennchan
+Table project.gennchan stats: [num_partitions: 0, num_files: 1, num_rows: 0, total_size: 1714, raw_data_size: 0]
+OK
+Time taken: 0.218 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanB.txt' into table gennchan;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanB.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanB.txt
+Loading data to table project.gennchan
+Table project.gennchan stats: [num_partitions: 0, num_files: 2, num_rows: 0, total_size: 5144, raw_data_size: 0]
+OK
+Time taken: 0.289 seconds
+hive> load data local inpath '/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanC.txt' into table gennchan;
+Copying data from file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanC.txt
+Copying file: file:/home/training/IBMProject-20180924T042348Z-001/IBMProject/data/join2_genchanC.txt
+Loading data to table project.gennchan
+Table project.gennchan stats: [num_partitions: 0, num_files: 3, num_rows: 0, total_size: 10296, raw_data_size: 0]
+OK
+Time taken: 0.215 seconds
+hive> select * from gennchan;
+
+Loud_Cooking    XYZ
+Cold_Games      CAB
+Surreal_Show    MAN
+Hourly_Show     BAT
+Hot_Sports      DEF
+Almost_News     XYZ
+Dumb_Talking    CAB
+PostModern_Show MAN
+Baked_Talking   BAT
+Loud_Games      DEF
+Cold_Talking    XYZ
+Surreal_Sports  CAB
+Hourly_Sports   MAN
+Hot_Talking     BAT
+Almost_Cooking  DEF
+Dumb_Show       XYZ
+PostModern_Sports       CAB
+Baked_News      MAN
+Loud_Talking    BAT
+Cold_Show       DEF
+Surreal_Talking XYZ
+Hourly_Talking  CAB
+Hot_News        MAN
+Almost_Games    BAT
+Dumb_Sports     DEF
+PostModern_Talking      XYZ
+Baked_Cooking   CAB
+Loud_Show       MAN
+Cold_Sports     BAT
+Surreal_News    DEF
+Hourly_News     XYZ
+Hot_Cooking     CAB
+Almost_Talking  MAN
+Dumb_Talking    BAT
+PostModern_News DEF
+Baked_Games     XYZ
+Loud_Sports     CAB
+Cold_Talking    MAN
+Surreal_Cooking BAT
+Hourly_Cooking  DEF
+Hot_Games       XYZ
+Almost_Show     CAB
+Dumb_News       MAN
+PostModern_Cooking      BAT
+Baked_Talking   DEF
+Loud_Talking    XYZ
+Cold_News       CAB
+Surreal_Games   MAN
+Hourly_Games    BAT
+Hot_Talking     DEF
+Almost_Sports   XYZ
+Dumb_Cooking    CAB
+PostModern_Games        MAN
+Baked_Show      BAT
+Loud_News       DEF
+Cold_Cooking    XYZ
+Surreal_Talking CAB
+Hourly_Talking  MAN
+Hot_Show        BAT
+Almost_Talking  DEF
+Dumb_Games      XYZ
+PostModern_Talking      CAB
+Baked_Sports    MAN
+Loud_Cooking    BAT
+Cold_Games      DEF
+Surreal_Show    XYZ
+Hourly_Show     CAB
+Hot_Sports      MAN
+Almost_News     BAT
+Dumb_Talking    DEF
+PostModern_Show XYZ
+Baked_Talking   CAB
+Loud_Games      MAN
+Cold_Talking    BAT
+Surreal_Sports  DEF
+Hourly_Sports   XYZ
+Hot_Talking     CAB
+Almost_Cooking  MAN
+Dumb_Show       BAT
+PostModern_Sports       DEF
+Baked_News      XYZ
+Loud_Talking    CAB
+Cold_Show       MAN
+Surreal_Talking BAT
+Hourly_Talking  DEF
+Hot_News        XYZ
+Almost_Games    CAB
+Dumb_Sports     MAN
+PostModern_Talking      BAT
+Baked_Cooking   DEF
+Loud_Show       XYZ
+Cold_Sports     CAB
+Surreal_News    MAN
+Hourly_News     BAT
+Hot_Cooking     DEF
+Almost_Talking  XYZ
+Dumb_Talking    CAB
+PostModern_News MAN
+Baked_Games     BAT
+Loud_Sports     DEF
+Cold_Talking    XYZ
+Surreal_Cooking CAB
+Hourly_Cooking  MAN
+Hot_Games       BAT
+Almost_Show     DEF
+Dumb_News       XYZ
+PostModern_Cooking      CAB
+Baked_Talking   MAN
+Loud_Talking    BAT
+Cold_News       DEF
+Surreal_Games   XYZ
+Hourly_Games    CAB
+Hot_Talking     MAN
+Almost_Sports   BAT
+Dumb_Cooking    DEF
+PostModern_Games        XYZ
+Baked_Show      CAB
+Loud_News       MAN
+Cold_Cooking    BAT
+Surreal_Talking DEF
+Hourly_Talking  XYZ
+Hot_Show        CAB
+Almost_Talking  MAN
+Dumb_Games      BAT
+PostModern_Talking      DEF
+Baked_Sports    XYZ
+Loud_Cooking    CAB
+Cold_Games      MAN
+Surreal_Show    BAT
+Hourly_Show     DEF
+Hot_Sports      XYZ
+Almost_News     CAB
+Dumb_Talking    MAN
+PostModern_Show BAT
+Baked_Talking   DEF
+Loud_Games      XYZ
+Cold_Talking    CAB
+Surreal_Sports  MAN
+Hourly_Sports   BAT
+Hot_Talking     DEF
+Almost_Cooking  XYZ
+Dumb_Show       CAB
+PostModern_Sports       MAN
+Baked_News      BAT
+Loud_Talking    DEF
+Cold_Show       XYZ
+Surreal_Talking CAB
+Hourly_Talking  MAN
+Hot_News        BAT
+Almost_Games    DEF
+Dumb_Sports     XYZ
+PostModern_Talking      CAB
+Baked_Cooking   MAN
+Loud_Show       BAT
+Cold_Sports     DEF
+Surreal_News    XYZ
+Hourly_News     CAB
+Hot_Cooking     MAN
+Almost_Talking  BAT
+Dumb_Talking    DEF
+PostModern_News XYZ
+Baked_Games     CAB
+Loud_Sports     MAN
+Cold_Talking    BAT
+Surreal_Cooking DEF
+Hourly_Cooking  XYZ
+Hot_Games       CAB
+Almost_Show     MAN
+Dumb_News       BAT
+PostModern_Cooking      DEF
+Baked_Talking   XYZ
+Loud_Talking    CAB
+Cold_News       MAN
+Surreal_Games   BAT
+Hourly_Games    DEF
+Hot_Talking     XYZ
+Almost_Sports   CAB
+Dumb_Cooking    MAN
+PostModern_Games        BAT
+Baked_Show      DEF
+Loud_News       XYZ
+Cold_Cooking    CAB
+Surreal_Talking MAN
+Hourly_Talking  BAT
+Hot_Show        DEF
+Almost_Talking  XYZ
+Dumb_Games      CAB
+PostModern_Talking      MAN
+Baked_Sports    BAT
+Loud_Cooking    DEF
+Cold_Games      XYZ
+Surreal_Show    CAB
+Hourly_Show     MAN
+Hot_Sports      BAT
+Almost_News     DEF
+Dumb_Talking    XYZ
+PostModern_Show CAB
+Baked_Talking   MAN
+Loud_Games      BAT
+Cold_Talking    DEF
+Surreal_Sports  XYZ
+Hourly_Sports   CAB
+Hot_Talking     MAN
+Almost_Cooking  BAT
+Time taken: 0.113 seconds
+
+
+
+
+
+
+Question 1:
+
+///What is the total number of viewers for shows on ABC?
+
+
+hive> select sum(viewer) from gennum g join gennchan c on g.showtitle = c.showtitle where c.channel = 'ABC';
+Total MapReduce jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0003, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0003/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0003
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2018-09-29 13:47:24,848 Stage-1 map = 0%,  reduce = 0%
+2018-09-29 13:47:32,680 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.04 sec
+2018-09-29 13:47:33,744 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.04 sec
+2018-09-29 13:47:34,833 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.04 sec
+2018-09-29 13:47:35,937 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.04 sec
+2018-09-29 13:47:37,046 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.04 sec
+2018-09-29 13:47:38,096 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 3.02 sec
+MapReduce Total cumulative CPU time: 3 seconds 20 msec
+Ended Job = job_1538241546989_0003
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0004, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0004/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0004
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2018-09-29 13:47:45,075 Stage-2 map = 0%,  reduce = 0%
+2018-09-29 13:47:49,406 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:47:50,469 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:47:51,561 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:47:52,651 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:47:53,818 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 1.45 sec
+MapReduce Total cumulative CPU time: 1 seconds 450 msec
+Ended Job = job_1538241546989_0004
+MapReduce Jobs Launched:
+Job 0: Map: 2  Reduce: 1   Cumulative CPU: 3.02 sec   HDFS Read: 113902 HDFS Write: 117 SUCCESS
+Job 1: Map: 1  Reduce: 1   Cumulative CPU: 1.45 sec   HDFS Read: 484 HDFS Write: 8 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 470 msec
+OK
+1115974
+Time taken: 38.15 seconds
+
+
+
+Question 2:
+
+
+///What is the number of viewers for BAT channel?
+
+
+
+hive> select sum(viewer) from gennum g join gennchan c on g.showtitle = c.showtitle where c.channel = 'BAT';
+Total MapReduce jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0005, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0005/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0005
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2018-09-29 13:50:07,358 Stage-1 map = 0%,  reduce = 0%
+2018-09-29 13:50:15,657 Stage-1 map = 50%,  reduce = 0%, Cumulative CPU 1.18 sec
+2018-09-29 13:50:16,716 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.44 sec
+2018-09-29 13:50:17,779 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.44 sec
+2018-09-29 13:50:18,869 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.44 sec
+2018-09-29 13:50:19,978 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.44 sec
+2018-09-29 13:50:21,095 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.44 sec
+2018-09-29 13:50:22,178 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 3.43 sec
+MapReduce Total cumulative CPU time: 3 seconds 430 msec
+Ended Job = job_1538241546989_0005
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0006, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0006/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0006
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2018-09-29 13:50:29,187 Stage-2 map = 0%,  reduce = 0%
+2018-09-29 13:50:33,534 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:50:34,598 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:50:35,695 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:50:36,783 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:50:37,872 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.67 sec
+2018-09-29 13:50:38,933 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 1.43 sec
+MapReduce Total cumulative CPU time: 1 seconds 430 msec
+Ended Job = job_1538241546989_0006
+MapReduce Jobs Launched:
+Job 0: Map: 2  Reduce: 1   Cumulative CPU: 3.43 sec   HDFS Read: 113902 HDFS Write: 117 SUCCESS
+Job 1: Map: 1  Reduce: 1   Cumulative CPU: 1.43 sec   HDFS Read: 484 HDFS Write: 8 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 860 msec
+OK
+5099141
+Time taken: 39.613 seconds
+
+
+
+Question 3:
+
+///What is the most viewed channel on ABC?
+
+
+hive> select g.showtitle,sum(viewer) from gennum g join gennchan c on g.showtitle = c.showtitle where c.channel = 'ABC' group by g.showtitle;
+Total MapReduce jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0007, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0007/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0007
+Hadoop job information for Stage-1: number of mappers: 2; number of reducers: 1
+2018-09-29 13:57:32,432 Stage-1 map = 0%,  reduce = 0%
+2018-09-29 13:57:40,300 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.11 sec
+2018-09-29 13:57:41,360 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.11 sec
+2018-09-29 13:57:42,419 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.11 sec
+2018-09-29 13:57:43,508 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.11 sec
+2018-09-29 13:57:44,620 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.11 sec
+2018-09-29 13:57:45,797 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 3.11 sec
+MapReduce Total cumulative CPU time: 3 seconds 110 msec
+Ended Job = job_1538241546989_0007
+Launching Job 2 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapred.reduce.tasks=<number>
+Starting Job = job_1538241546989_0008, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0008/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0008
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2018-09-29 13:57:53,690 Stage-2 map = 0%,  reduce = 0%
+2018-09-29 13:57:58,053 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:57:59,130 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:58:00,195 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:58:01,280 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:58:02,375 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:58:03,462 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 0.78 sec
+2018-09-29 13:58:04,530 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 1.55 sec
+MapReduce Total cumulative CPU time: 1 seconds 550 msec
+Ended Job = job_1538241546989_0008
+MapReduce Jobs Launched:
+Job 0: Map: 2  Reduce: 1   Cumulative CPU: 3.11 sec   HDFS Read: 113902 HDFS Write: 746 SUCCESS
+Job 1: Map: 1  Reduce: 1   Cumulative CPU: 1.55 sec   HDFS Read: 1112 HDFS Write: 370 SUCCESS
+Total MapReduce CPU Time Spent: 4 seconds 660 msec
+OK
+Almost_Games    49237
+Almost_News     46592
+Almost_Show     50202
+Baked_Games     51604
+Baked_News      47211
+Cold_News       47924
+Cold_Sports     52005
+Dumb_Show       53824
+Dumb_Talking    103894
+Hot_Games       50228
+Hot_Show        54378
+Hourly_Cooking  54208
+Hourly_Show     48283
+Hourly_Talking  108163
+Loud_Games      49482
+Loud_Show       50820
+PostModern_Games        50644
+PostModern_News 50021
+Surreal_News    50420
+Surreal_Sports  46834
+Time taken: 41.133 seconds
+
+
+
+
+Question 4:
+
+
+//What are the aired shows on ZOO,NOX and ABC channels?
+
+
+hive> select showtitle,channel from gennchan where channel = 'ZOO' or channel = 'NOX' or channel = 'ABC';
+Total MapReduce jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1538241546989_0009, Tracking URL = http://hadoop:8088/proxy/application_1538241546989_0009/
+Kill Command = /usr/lib/hadoop/bin/hadoop job  -kill job_1538241546989_0009
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+2018-09-29 14:02:35,549 Stage-1 map = 0%,  reduce = 0%
+2018-09-29 14:02:39,920 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 0.94 sec
+MapReduce Total cumulative CPU time: 940 msec
+Ended Job = job_1538241546989_0009
+MapReduce Jobs Launched:
+Job 0: Map: 1   Cumulative CPU: 0.94 sec   HDFS Read: 10724 HDFS Write: 1017 SUCCESS
+Total MapReduce CPU Time Spent: 940 msec
+OK
+Almost_Show     ABC
+Hourly_Cooking  ABC
+Hot_Show        ABC
+Baked_Games     ABC
+Dumb_Talking    ABC
+PostModern_Games        ABC
+Surreal_News    ABC
+Loud_Show       ABC
+Cold_News       ABC
+Almost_Games    ABC
+Hourly_Talking  ABC
+Hot_Games       ABC
+Baked_News      ABC
+Dumb_Show       ABC
+PostModern_News ABC
+Surreal_Sports  ABC
+Loud_Games      ABC
+Cold_Sports     ABC
+Almost_News     ABC
+Hourly_Show     ABC
+PostModern_Sports       NOX
+Hourly_Talking  NOX
+Baked_Cooking   NOX
+Hot_Cooking     NOX
+Loud_Sports     NOX
+Almost_Show     NOX
+Cold_News       NOX
+Dumb_Cooking    NOX
+Surreal_Talking NOX
+PostModern_Talking      NOX
+Hourly_Show     NOX
+Baked_Talking   NOX
+Hot_Talking     NOX
+Loud_Talking    NOX
+Almost_Games    NOX
+Cold_Sports     NOX
+Dumb_Talking    NOX
+Surreal_Cooking NOX
+PostModern_Cooking      NOX
+Hourly_Games    NOX
+Baked_Show      NOX
+Hot_Show        NOX
+Loud_Cooking    NOX
+Almost_News     NOX
+Cold_Talking    NOX
+Dumb_Show       NOX
+Surreal_Talking NOX
+PostModern_Talking      NOX
+Hourly_News     NOX
+Baked_Games     NOX
+Hot_Games       NOX
+Loud_Talking    NOX
+Almost_Sports   NOX
+Cold_Cooking    NOX
+Dumb_Games      NOX
+Surreal_Show    NOX
+PostModern_Show NOX
+Hourly_Sports   NOX
+Baked_News      NOX
+Hot_News        NOX
+Time taken: 18.32 seconds
+
+
