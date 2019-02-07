@@ -16,3 +16,8 @@ Problem statement:
 2. What is the number of viewers for the BAT channel?
 3. What is the most viewed show on ABC channel?
 4. What are the aired shows on ZOO,NOX, ABC channels ?
+
+
+
+ Hive Commands |  Functions 
+ 
