@@ -1,0 +1,69 @@
+Step 1:  Download Hive tar.
+
+Command: wget http://archive.apache.org/dist/hive/hive-2.1.0/apache-hive-2.1.0-bin.tar.gz
+
+Step 2:  Extract the tar file.
+
+Command: tar -xzf apache-hive-2.1.0-bin.tar.gz
+
+Command: ls
+
+Step 3: Edit the “.bashrc” file to update the environment variables for user.
+Command:  sudo gedit .bashrc
+
+Add the following at the end of the file:
+
+# Set HIVE_HOME
+
+export HIVE_HOME=/home/edureka/apache-hive-2.1.0-bin
+export PATH=$PATH:/home/edureka/apache-hive-2.1.0-bin/bin
+
+Run below command to make the changes work in same terminal.
+
+Command: source .bashrc
+
+Step 4: Check hive version.
+
+Step 5:  Create Hive directories within HDFS. The directory ‘warehouse’ is the location to store the table or data related to hive.
+
+Command:
+
+hdfs dfs -mkdir -p /user/hive/warehouse
+hdfs dfs -mkdir /tmp
+Step 6: Set read/write permissions for table.
+
+Command:
+
+In this command, we are giving write permission to the group:
+
+hdfs dfs -chmod g+w /user/hive/warehouse
+hdfs dfs -chmod g+w /tmp
+Step 7:  Set Hadoop path in hive-env.sh
+
+Command: cd apache-hive-2.1.0-bin/
+
+Command: gedit conf/hive-env.sh
+
+Step 8: Edit hive-site.xml
+
+Command: gedit conf/hive-site.xml
+
+Step 9: By default, Hive uses Derby database. Initialize Derby database.
+
+Command: bin/schematool -initSchema -dbType derby
+
+Step 10: Launch Hive.
+
+Command: hive
+
+Step 11: Run few queries in Hive shell.
+
+Command: show databases;
+
+Command: create table employee (id string, name string, dept string) row format delimited fields terminated by ‘\t’ stored as textfile;
+
+Command: show tables;
+
+Step 12: To exit from Hive:
+
+Command: exit;
